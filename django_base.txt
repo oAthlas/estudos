@@ -1,0 +1,21 @@
+DJANGO
+
+django-admin startproject <project_name>
+
+A partir do começo do projeto rode o comando básico de criar apps (py manage.py startapp <app_name>) e já o adicione no settings.py, ainda no settings não se esqueça de colocar o caminho padrão dos templates como [BASE_DIRS / 'templates'] e mudar a linguagem para pt-br. Uma vez com o settings configurado crie o urls.py do app criado.
+
+MODELS
+
+Configure as models caso tenha, class <name>(models.Model): <field_name> = models.<function_name>(values). É importante adicionar a def __str__(self): return self.name para quesitos de debug.
+
+VIEWS
+
+Crie a primeira view como uma função, geralmente def <function_name>(request).
+
+URLS
+
+A urls.py do app criado virá vazia, lembre-se de importar as views a partir da pasta de origem do projeto com from . import views e o path com from django.urls import path. Crie a url_patterns com path('<url_name>, view.<def_in_views>, name='<def_name>').
+
+TEMPLATES
+
+Crie a pasta templates na raiz do app e dentro dele crie o html do site. Para chama-lo via views.py use return render(request, '<html_name>.html')
